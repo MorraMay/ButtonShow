@@ -1,133 +1,179 @@
 *{
     margin: 0;
     padding: 0;
-    border: 0;
     outline: 0;
+    border: 0;
     list-style: none;
     box-sizing: border-box;
     text-decoration: none;
 }
-
-.container {
-    width: 310px;
-    height: 110px;
-    margin: 200px auto;
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-  }
-  .container:hover .box:nth-child(1){
-    animation: animate30 4000ms infinite 100ms;
-   
-   
-  }
-  .container:hover .box:nth-child(2){
-    animation: animate115 4000ms infinite 100ms;
-  } 
-  .container:hover .box:nth-child(3){
-    animation: animate45 4000ms infinite 100ms;
-  } 
-  .box {
-    
-    width: 100px;
-    height: 100px;
-    display: flex;
-    position: relative;
-    transition: 0.4s;
-    align-items: center;
-    justify-content: center;
-    background-color: orange;
-/*     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); */
-  }
-  
-  .box::before {
-    display: inline-block;
-    font-size: 26px;
-  }
-  
-  .box:nth-child(1) {
-    /*   transform: rotate(30deg); */
-    transition: 0.2s;
-    position: relative;
-    border-radius:10px 0px 0px 10px;
-    
-  }
-  
-  .box:nth-child(1)::before {
-    content: "Н А";
-    position: absolute;
-    right: 0;
-    
-  }
-  
-  .box:nth-child(2) {
-    /*   transform: rotate(115deg); */
-
-  
-   
-  }
-  
-  .box:nth-child(2)::before {
-    content: "Т И С К";
-    position: absolute;
-    left: 5%;
-  }
-  
-  .box:nth-child(3) {
-    /*   transform: rotate(-45deg); */
-    border-radius:0px 10px 10px 0px;
-
-  }
-  
-  .box:nth-child(3)::before {
-    content: "А Й";
-      
-    position: absolute;
-    left: 0;
-  }
-  
-  @keyframes animate30 {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    50% {
-        color: rgb(255, 255, 255);
-        background-color: rgb(56, 94, 234);
-      transform: rotate(30deg);
-    }
-  
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-  
-  @keyframes animate115 {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    50% {
-      transform: rotate(115deg);
-      color: rgb(255, 255, 255);
-      background-color: rgb(253, 40, 232);
-    }
-  
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-  
-  @keyframes animate45 {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    50% {
-        color: rgb(255, 255, 255);
-        background-color: rgb(154, 255, 96);
-      transform: rotate(-45deg);
-    }
+body{
+ background: url(https://look.com.ua/pic/201209/1920x1080/look.com.ua-11170.jpg);
+ background-size: cover;
+ background-attachment: fixed;
 }
+
+.form {
+  box-shadow: -4px 0px 20px #000;
+  backdrop-filter: blur(15px);
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  height: 500px;
+  margin: 100px auto;
+  transition: 0.8s;
+}
+.form:hover{
+  box-shadow: 4px 0px 20px #000;
+}
+.text {
+  background-color: transparent;
+  padding: 10px;
+  width: 350px;
+  border-bottom: 1px solid #444444;
+  transition: 0.6s;
+  border-radius: 10px;
+}
+
+.text:focus{
+  box-shadow: 0 0 5px #000;
+  background-color: #60d9db5a;
+ 
+}
+.email {
+  background-color: transparent;
+  padding: 10px;
+  width: 350px;
+  transition: 0.6s;
+  border-radius: 10px;
+  border-bottom: 1px solid #444444;
+}
+.email:focus{
+ 
+  box-shadow: 0 0 5px #000;
+  background-color: #60d9db5a;
+}
+.password {
+  background-color: transparent;
+  padding: 10px;
+  transition: 0.6s;
+  width: 350px;
+  border-radius: 10px;
+  border-bottom: 1px solid #444444;
+}
+.password:focus{
+
+  box-shadow: 0 0 5px #000;
+  background-color: #60d9db5a;
+}
+.neon{
+	position: relative;
+	display: inline-block;
+	padding: 17px 22px;
+	margin: 20px 20px;
+  background-color: #444444;
+	color: #03e9f4;
+	font-size: 22px;
+  transform: translateY(-20px);
+  cursor: pointer;
+	text-decoration: none;
+	overflow: hidden;
+	z-index: 2;
+	letter-spacing: 2px;
+	-webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+	animation:  neon-2 1.9s infinite alternate-reverse ;
+	transition: all 0.4s ease;
+    text-shadow: none;
+    border:none;
+}
+.neon:hover{
+	background: #03e9f4;
+	color: #1b0000;
+	box-shadow: 0 0 5px #03e9f4,
+	0 0 10px #03e9f4,
+	0 0 25px #03e9f4,
+	0 0 100px #03e9f4;
+	transition: all 0.4s ease;
+    border:none;
+}
+.neon::before {
+    display: none;
+}
+.neon span{
+	position: absolute;
+	display: block;
+}
+.neon span:nth-child(1) {
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #03e9f4 );
+	animation: animate1 3s linear infinite ;
+}
+@keyframes animate1{
+	0%{
+		left: -100%;
+	}
+	50%,100%{
+		left: 100%;
+	}
+}
+.neon span:nth-child(2) {
+	top: -100%;
+	right: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(180deg, transparent, #03e9f4 );
+	animation: animate2 3s linear infinite ;
+	animation-delay: 0.7s;
+}
+@keyframes animate2{
+	0%{
+		top: -100%;
+	}
+	50%,100%{
+		top: 100%;
+	}
+}
+.neon span:nth-child(3) {
+	bottom: 0;
+	right: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(270deg, transparent, #03e9f4 );
+	animation: animate3 3s linear infinite ;
+	animation-delay: 1.5s;
+}
+@keyframes animate3{
+	0%{
+		right: -100%;
+	}
+	50%,100%{
+		right: 100%;
+	}
+}
+.neon span:nth-child(4) {
+	bottom: -100%;
+	left: 0%;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(360deg, transparent, #03e9f4 );
+	animation: animate4 3s linear infinite ;
+	animation-delay: 2.2s;
+}
+@keyframes animate4{
+	0%{
+		bottom: -100%;
+	}
+	50%,100%{
+		bottom: 100%;
+	}
+}
+
+
